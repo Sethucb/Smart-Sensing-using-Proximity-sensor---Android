@@ -1,0 +1,3 @@
+A proximity sensor is a sensor able to detect the presence of nearby objects without any physical contact.
+This app lets us control the device without having to touch it. While we are busy driving or working at our desk, while listening to music, we don’t have to stop what we’re doing to change songs, or even touch the screen. 
+This app uses the proximity sensor in our phone to control the music player by waving our hand. Features like going forward to next song can also be added.
