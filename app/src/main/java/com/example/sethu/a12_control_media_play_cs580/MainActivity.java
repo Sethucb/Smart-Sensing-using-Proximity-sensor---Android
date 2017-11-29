@@ -55,14 +55,31 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
-    @Override
+ @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         // More code goes here
         if(sensorEvent.sensor.getType() == Sensor.TYPE_PROXIMITY) {
-            System.out.println("Proximity sensor Eventtttt==");
+            if (sensorEvent.values[0] < sensor.getMaximumRange()) {
+                // Detected something nearby
+    //            getWindow().getDecorView().setBackgroundColor(Color.RED);
+                Toast.makeText(getApplicationContext(), "NEAR", Toast.LENGTH_SHORT).show();
+                AudioManager mAudioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+
+                if (mAudioManager.isMusicActive()) {
+                    System.out.println("MUSIC PLAYING=========="+"\n");
+                    Intent i = new Intent("com.android.music.musicservicecommand");
+
+                    i.putExtra("command", "pause");
+                    MainActivity.this.sendBroadcast(i);
+                }
+
+            } else {
+                // Nothing is nearby
+    //            getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+                Toast.makeText(getApplicationContext(), "FAR", Toast.LENGTH_SHORT).show();
+            }
         }
     }
-
 
     @Override
     protected void onResume() {
