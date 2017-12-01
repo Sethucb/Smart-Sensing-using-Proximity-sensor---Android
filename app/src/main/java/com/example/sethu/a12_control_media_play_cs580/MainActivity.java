@@ -11,6 +11,7 @@ import android.widget.Toast;
 import android.media.AudioManager;
 import android.content.Intent;
 
+
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager sensorManager;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
 
         if(sensor == null) {
             System.out.println("NO SENSORRRRR");

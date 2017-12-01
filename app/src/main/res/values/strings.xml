@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">12-control-media-play-cs580</string>
     <string name="action_settings">Settings</string>
+    <string name="media_control">MEDIA CONTROL</string>
+    <string name="para_text">A proximity sensor is a sensor able to detect the presence of nearby objects without any physical contact.
+This app uses the proximity sensor in our phone to control the music player(Pause/Play) by waving our hand.</string>
 </resources>
